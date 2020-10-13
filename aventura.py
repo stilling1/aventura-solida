@@ -1,5 +1,4 @@
 global vida
-vida = 3
 def mostrar_aventura():
     global vida
     while True:
@@ -27,4 +26,19 @@ print("Bienvenido a Aventura Solida!\n-------------------")
 nombre = input("Cuál es tu nombre? ")
 nombre = nombre[0].upper() + nombre[1:]
 print("Hola " + nombre + "!")
+
+dif = input("Elija la difultad Facil(1), Medio(2), Dificil(3): ")
+dif = int(dif)
+if(dif == 1):
+    vida = 3
+if(dif == 2):
+    vida = 2
+if(dif == 3):
+    vida = 1
+else:
+    print("Ingrese un numero valido")
+
+
+
+
 mostrar_aventura()
