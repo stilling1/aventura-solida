@@ -24,21 +24,25 @@ def mostrar_aventura():
 
 print("Bienvenido a Aventura Solida!\n-------------------")
 nombre = input("Cuál es tu nombre? ")
-nombre = nombre[0].upper() + nombre[1:]
+nombre = nombre[0].upper() + nombre[1:].lower()
 print("Hola " + nombre + "!")
-
-dif = input("Elija la difultad Facil(1), Medio(2), Dificil(3): ")
-dif = int(dif)
-if(dif == 1):
-    vida = 3
-if(dif == 2):
-    vida = 2
-if(dif == 3):
-    vida = 1
-else:
-    print("Ingrese un numero valido")
-
-
-
+dif = 0
+while(1):
+    dif = input("Elija la dificultad Facil(1), Medio(2), Dificil(3): ")
+    try:
+        dif = int(dif)
+    except:
+        print("Sólo se admite un núm. del 1 al 3!")
+        continue
+    if(dif == 1):
+        vida = 3
+    if(dif == 2):
+        vida = 2
+    if(dif == 3):
+        vida = 1
+    else:
+        print("Ingrese un numero valido")
+    if(dif >= 1 and dif <= 3):
+        break
 
 mostrar_aventura()
